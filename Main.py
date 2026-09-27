@@ -34,14 +34,14 @@ class FitnessResponse(BaseModel):
     plan: str
 
 
-   @app.get("/")
+@app.get("/")
 async def home():
     return FileResponse("index.html")
 
 
 @app.get("/health")
 async def health():
-    return {"status": "healthy", "service": "FitBuddy"}
+    return {"status": "healthy", "service": "FitBuddy AI"}
 
 
 @app.post("/generate-plan", response_model=FitnessResponse)
