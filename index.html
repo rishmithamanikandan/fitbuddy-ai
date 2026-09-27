@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f7f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .box {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px #ccc;
+    }
+    h1 {
+      text-align: center;
+      color: #16805c;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 7px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 22px;
+      background: #16805c;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eef8f3;
+      border-radius: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>🏃 FitBuddy AI</h1>
+
+    <label>Age</label>
+    <input id="age" type="number" placeholder="Enter your age">
+
+    <label>Fitness Goal</label>
+    <select id="goal">
+      <option>General Fitness</option>
+      <option>Strength</option>
+      <option>Flexibility</option>
+      <option>Endurance</option>
+    </select>
+
+    <label>Activity Level</label>
+    <select id="level">
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+
+    <button onclick="generatePlan()">Generate Fitness Plan</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function generatePlan() {
+      const age = document.getElementById("age").value;
+      const goal = document.getElementById("goal").value;
+      const level = document.getElementById("level").value;
+
+      if (!age) {
+        document.getElementById("result").innerText =
+          "Please enter your age.";
+        return;
+      }
+
+      document.getElementById("result").innerText =
+        "Your FitBuddy plan is being prepared...\\n\\n" +
+        "Age: " + age +
+        "\\nGoal: " + goal +
+        "\\nLevel: " + level +
+        "\\n\\nWeekly plan:\\n" +
+        "• Warm-up: 5–10 minutes\\n" +
+        "• Main exercise: 20–30 minutes\\n" +
+        "• Cool-down: 5 minutes\\n" +
+        "• Take rest when needed.";
+    }
+  </script>
+</body>
+</html>
